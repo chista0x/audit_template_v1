@@ -1,0 +1,357 @@
+name: "Sponsor: Answers to Questions"
+description: "Provide the necessary details about your project for the audit process."
+title: "Sponsor: Answers to Questions"
+labels:
+  - "Sponsor: Answers to Questions"
+body:
+  - type: markdown
+    attributes:
+      value: |
+        # Please answer the following questions to provide essential information about your project. This will help us better understand your requirements and prepare for the audit.
+
+  - type: markdown
+    attributes:
+      value: |
+        # General Information
+
+  - type: input
+    attributes:
+      label: "Project/Company Name"
+    validations:
+      required: true
+  
+  - type: markdown
+    attributes:
+      value: |
+
+        ---     
+
+  - type: textarea
+    attributes:
+      label: "Brief Project Description"
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: |
+
+        ---     
+
+  - type: input
+    attributes:
+      label: "Website URL"
+      description: "Provide the URL to your project or company website."
+
+  - type: markdown
+    attributes:
+      value: |
+
+        ---     
+
+  - type: checkboxes
+    attributes:
+      label: "Target Blockchain(s)"
+      description: "On which chain(s) are you planning to deploy?"
+      options:
+        - label: "Ethereum Mainnet"
+        - label: "Arbitrum"
+        - label: "Optimism"
+        - label: "Solana"
+        - label: "Base"
+        - label: "Other"
+    validations:
+      required: true
+
+  - type: input
+    attributes:
+      label: "Specify Other Blockchain(s)"
+      description: "If you selected 'Other', please specify the blockchain(s) here."
+      placeholder: "Enter blockchain names"
+    validations:
+      required: false
+
+  - type: markdown
+    attributes:
+      value: |
+
+        ---      
+
+  - type: dropdown
+    attributes:
+      label: "Has your project undergone a security review before?"
+      options:
+        - "Yes"
+        - "No"
+        - "I don’t know"
+        - "Other" 
+
+  - type: input
+    attributes:
+      label: "Specify Other Security Review"
+      description: "If you selected 'Other', please specify the security review details here."
+      placeholder: "Enter details"
+    validations:
+      required: false
+
+  - type: markdown
+    attributes:
+      value: |
+
+        ---     
+
+  - type: input
+    attributes:
+      label: "Primary Contact Email"
+      description: "Enter your best email for communication."
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: |
+
+        ---     
+
+  - type: input
+    attributes:
+      label: "Telegram Handle"
+      description: "Enter your Telegram handle if applicable."
+
+  - type: markdown
+    attributes:
+      value: |
+
+        ---     
+
+  - type: dropdown
+    attributes:
+      label: "Expected Audit Timeline"
+      description: "When do you need your audit completed?"
+      options:
+        - "0-1 Week"
+        - "1-2 Weeks"
+        - "2-4 Weeks"
+        - "1-3 Months"
+        - "3+ Months"
+        - "Other"
+
+  - type: input
+    attributes:
+      label: "Specify Other Timeline"
+      description: "If you selected 'Other', please specify the timeline here."
+      placeholder: "Enter timeline"
+    validations:
+      required: false
+
+  - type: markdown
+    attributes:
+      value: |
+
+        ---     
+
+  - type: dropdown
+    attributes:
+      label: "How did you hear about Chista0x?"
+      options:
+        - "Twitter"
+        - "YouTube"
+        - "LinkedIn"
+        - "Google"
+        - "Referral"
+        - "Other"   
+
+  - type: input
+    attributes:
+      label: "Specify Other Source"
+      description: "If you selected 'Other', please specify how you heard about Chista0x here."
+      placeholder: "Enter source"
+    validations:
+      required: false
+
+
+
+  - type: markdown
+    attributes:
+      value: |
+        # Technical Information
+
+
+  - type: textarea
+    attributes:
+      label: "Audit Scope (contracts)"
+      description: |
+        _Examples:_
+
+        ```All Contracts in `src` are in scope except `interfaces`.```
+
+        ```All Contracts in `contracts` are in scope.```
+
+        ```
+          pkg/pool-quantamm/contracts
+          ├── QuantAMMWeightedPool.sol
+          ├── rules
+          │   ├── AntimomentumUpdateRule.sol
+          │   ├── base
+          │   │   ├── QuantammBasedRuleHelpers.sol
+          │   │   └── QuantammVarianceBasedRule.sol
+          │   ├── ChannelFollowingUpdateRule.sol
+          │   └── UpdateRule.sol
+          └── UpdateWeightRunner.sol
+
+          pkg/pool-hooks/contracts/hooks-quantamm
+          ├── LPNFT.sol
+          └── UpliftOnlyExample.sol
+
+          pkg/interfaces/contracts/pool-quantamm
+          ├── IQuantAMMWeightedPool.sol
+          ├── OracleWrapper.sol
+
+        ```
+
+
+  - type: textarea
+    attributes:
+      label: "Security Mechanisms"
+      description: "What security mechanisms have you implemented in your project?"
+
+  - type: markdown
+    attributes:
+      value: |
+
+        ---     
+
+  - type: textarea
+    attributes:
+      label: "Areas of Focus"
+      description: "Are there specific functionalities or areas you'd like us to prioritize during the audit?"
+
+  - type: markdown
+    attributes:
+      value: |
+
+        ---     
+
+  - type: textarea
+    attributes:
+      label: "Involved Off-Chain Mechanisms"
+      description: "Describe any off-chain mechanisms (e.g., keeper bots, automated systems) involved in your protocol."
+
+
+
+  - type: markdown
+    attributes:
+      value: |
+
+
+        # Protocol Details and Constraints
+
+  - type: textarea
+    attributes:
+      label: "Tokens and Standards"
+      description: |
+        If your project involves tokens:
+        - Are you allowing only whitelisted tokens?
+        - Are they assumed to have specific properties (e.g., non-reentrant)?
+        - Are there any unusual tokens you'd like to integrate (e.g., USDT in-scope)?
+
+  - type: markdown
+    attributes:
+      value: |
+
+        ---     
+
+  - type: textarea
+    attributes:
+      label: "Admin/Owner Privileges"
+      description: "What actions can the admin or owner perform within the codebase? List any constraints or limitations."
+
+  - type: markdown
+    attributes:
+      value: |
+
+        ---     
+
+  - type: textarea
+    attributes:
+      label: "Protocol Integration Constraints"
+      description: "Are there any limitations on values set by admins or protocols you integrate with, such as array lengths or other constraints?"
+
+  - type: markdown
+    attributes:
+      value: |
+
+        ---     
+
+  - type: textarea
+    attributes:
+      label: "EIP Compliance"
+      description: "Does your codebase comply with any specific EIPs? If yes, please specify."
+
+  - type: markdown
+    attributes:
+      value: |
+
+        ---     
+
+  - type: textarea
+    attributes:
+      label: "Design Choices"
+      description: "Explain any significant design choices you made, including trade-offs or decisions about readability vs. performance."
+
+
+
+  - type: markdown
+    attributes:
+      value: |
+        # Additional Information
+
+  - type: textarea
+    attributes:
+      label: "Desired Properties/Invariants"
+      description: "List any properties or invariants you want to maintain, even if their impact is low or unknown."
+
+  - type: markdown
+    attributes:
+      value: |
+
+        ---     
+
+  - type: textarea
+    attributes:
+      label: "Previous Audits"
+      description: "Provide links to any previous audit reports (if applicable)."
+
+  - type: markdown
+    attributes:
+      value: |
+
+        ---     
+
+  - type: textarea
+    attributes:
+      label: "Relevant Protocol Resources"
+      description: "List any protocol resources (e.g., whitepapers, documentation, diagrams) that are relevant for the audit."
+
+  - type: markdown
+    attributes:
+      value: |
+
+        ---     
+
+  - type: textarea
+    attributes:
+      label: "Additional Audit Information"
+      description: "Include any other details or specific aspects you'd like us to consider during the audit."
+
+  - type: markdown
+    attributes:
+      value: |
+
+        ---     
+
+  - type: markdown
+    attributes:
+      value: |
+        **Thank you for completing this form!**  
+        Once submitted, please ensure the auditor has access to your codebase and all relevant resources for the audit process.
