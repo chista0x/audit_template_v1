@@ -123,7 +123,7 @@ The cost of the audit is calculated based on the following formula, which consid
 
 #### Pricing Formula:
 ```javascript
-var Base_Price = 4; // Initial price per line of code for smaller projects
+var Base_Price = 6; // Initial price per line of code for smaller projects
 var Scaling_Factor = 2000; // Controls how the price decreases as nSLOC increases
 
 var nSLOC = 2342; // Total normalized lines of code
@@ -147,19 +147,19 @@ Using the well-known [Uniswap v3 Core](https://github.com/Uniswap/v3-core) repos
 
 - **nSLOC:** 2342  
 - **Complexity Score:** 2137  
-- **Base_Price:** $4  
+- **Base_Price:** $6  
 - **Scaling_Factor:** 2000  
 
 The calculations are as follows:  
 1. **nSLOC_Price_Ratio:**  
    ```
-   nSLOC_Price_Ratio = 4 * (2000 / (2000 + 2342))  
-                     ≈ $1.84  
+   nSLOC_Price_Ratio = 6 * (2000 / (2000 + 2342))  
+                     ≈ $2.76  
    ```
 2. **Audit Price:**  
    ```
-   Audit_Price = 2342 * 1.84 * (1 + (2137 / 2000))  
-               ≈ $8,925 
+   Audit_Price = 2342 * 2.76 * (1 + (2137 / 2000))  
+               ≈ $13,338 
    ```
 
 #### Key Notes:
